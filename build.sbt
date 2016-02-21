@@ -1,16 +1,7 @@
-name := """play-getting-started"""
-
-version := "1.0-SNAPSHOT"
-
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
-
-scalaVersion := "2.11.7"
-
+name := "runkmeans"
+version := "1.0"
+scalaVersion := "2.10.4"
 libraryDependencies ++= Seq(
-  jdbc,
-  cache,
-  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
-  ws
-)
-
-libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _ )
+  "org.apache.spark"  % "spark-core_2.10"              % "1.1.0" % "provided",
+  "org.apache.spark"  % "spark-mllib_2.10"             % "1.1.0"
+  )
